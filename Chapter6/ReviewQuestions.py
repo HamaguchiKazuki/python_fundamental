@@ -110,7 +110,15 @@ class Robot:
         self.claw = Claw()
         self.smartphone = SmartPhone()
     def does(self):
-        print('This Robot has a', self.laser.does(), 'Claw and', self.claw.does(), 'SmartPhone and', self.smartphone.does() )
+       return ''' I have many attachments:
+                  My laser, to %s
+                  My claw, to %s
+                  My smartphone, to %s''' % (
+           self.laser.does(),
+           self.claw.does(),
+           self.smartphone.does()
+       )
 
 robot = Robot()
-robot.does()
+print( robot.does() )
+
