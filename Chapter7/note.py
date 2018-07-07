@@ -320,3 +320,34 @@ print(struct.unpack('>2L', data[16:24]))
 # 16x 16バイトを読み飛ばす 2L 2個の符号なし調整数を読み出す 6x最後の6バイトを読み飛ばす
 print(struct.unpack('>16x2L6x', data))
 
+#外部パッケージのconstructをインストール
+#最新バージョンconstruct(v2.9.45)では使えない
+# from construct import *
+# fmt = Struct('png',
+#              Magic(b'\x89PNG\r\n\x1a\n'),
+#              UBInt32('length'),
+#              Const(String('type', 4), b'IHDR'),
+#              UBInt32('width'),
+#              UBInt32('height')
+#              )
+# result = fmt.parse(data)
+# print(result)
+# print(result.width, result.height)
+
+#binasciiの利用
+import binascii
+valid_png_header = b'\x89PNG\r\n\x1a\n'
+print(binascii.hexlify(valid_png_header))
+
+#逆方向の変換
+print(binascii.unhexlify(b'89504e470d0a1a0a'))
+
+#ビット演算子
+a = 0b0101
+b = 0b0001
+print(a & b)
+print(a | b)
+print(a ^ b)
+print(~a)
+print(a << 1)
+print(a >> 1)
