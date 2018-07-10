@@ -146,3 +146,135 @@ bdata = fin.read()
 print(len(bdata))
 print(bdata[0])
 
+#seekの移動練習(一番使用効率が高いのがバイナリデータの処理)
+fin = open('bfile', 'rb')
+
+print(fin.seek(254, 0))
+print(fin.seek(1, 1))
+bdata = fin.read()
+print('bdata', len(bdata))
+print(bdata[0])
+
+#CSV(Comma Separated Values)データーベース
+import csv
+villains = [
+    ['Doctor', 'No'],
+    ['Rosa', 'Klebb'],
+    ['Mister', 'Big'],
+    ['Auric', 'Goldfinger'],
+    ['Ernst', 'Blofeld'],
+]
+
+with open('villains', 'wt') as fout: #コンテキストマネージャー
+    csvout = csv.writer(fout)
+    csvout.writerows(villains)
+
+# villainsを呼び出して元のデータ構造を作成
+with open('villains', 'rt') as fin:
+    cin = csv.reader(fin) # イテレラブルな値
+    villains = [row for row in cin] # リスト内包表記を使っている
+
+print(villains)
+
+# 辞書の形式で呼び出し
+with open('villains', 'rt') as fin:
+    cin = csv.DictReader(fin, fieldnames=['first', 'last'])
+    villains = [row for row in cin]
+
+print(villains)
+
+# 辞書形式で書き込み
+villains = [
+    {'first': 'Doctor', 'last': 'No'},
+    {'first': 'Rosa', 'last': 'Klebb'},
+    {'first': 'Mister', 'last': 'Big'},
+    {'first': 'Auric', 'last': 'Goldfinger'},
+    {'first': 'Ernst', 'last': 'Blofeld'},
+]
+
+with open('villains', 'wt') as fout:
+    cout = csv.DictWriter(fout, ['first', 'last'])
+    cout.writeheader()
+    cout.writerows(villains)
+
+# ファイルをデータから読み直す
+with open('villains', 'rt') as fin:
+    cin = csv.DictReader(fin)
+    villains = [row for row in cin]
+
+print('dict villains', villains)
+
+# XML
+import xml.etree.ElementTree as et
+tree = et.ElementTree(file='menu.xml')
+root = tree.getroot()
+print(root.tag)
+for child in root:
+    print('tag:', child.tag, 'attributes:', child.attrib)
+    for grandchild in child:
+        print('\ttag:', grandchild.tag, 'attributes:', grandchild.attrib)
+
+print('menuセクション数',len(root))
+print('朝食の項目の数', len(root[0]))
+
+# JSON(JavaScript Object Notation)
+#サンプルデータの作成
+menu = \
+    {
+        "breakfast": {
+                "hours": "7-11",
+                "items": {
+                    "breakfast burritos": "$6.00",
+                    "pancakes": "$4.00"
+                }
+            },
+        "lunch": {
+            "hours": "11-3",
+            "items": {
+                "hamburger": "$5.00"
+            }
+        },
+        "dinner": {
+            "hours": "3-10",
+            "items": {
+                "spaghetti": "$8.00"
+        }
+    }
+}
+
+# dumpsを使ったエンコード
+import json
+menu_json = json.dumps(menu)
+print(type(menu_json))
+print('json', menu_json)
+
+# loadsを使ってPythonデータ構造に変更
+menu2 = json.loads(menu_json)
+print(type(menu2))
+print('python struct', menu2)
+
+# datetimeのエンコードとデコード（例外が起こる）
+import datetime
+now = datetime.datetime.utcnow()
+print(now)
+# json.dumps(now) ここで起こる
+now_str = str(now)
+print(json.dumps(now_str))
+
+from time import mktime
+now_epoch = int(mktime(now.timetuple()))
+print(json.dumps(now_epoch))
+
+# ちょっと変換が面倒かな・・・
+# JSONのエンコード方式を継承して変えて見ましょ
+class DTEncoder(json.JSONEncoder):
+    def default(self, obj):
+        # isinstance()はobjの型をチェックする
+        if isinstance(obj, datetime.datetime):
+            return int(mktime(obj.timetuple()))
+        else:
+            return json.JSONEncoder.default(self, obj)
+
+json.dumps(now, cls=DTEncoder)
+
+#YAML
