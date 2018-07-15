@@ -300,3 +300,37 @@ from defusedxml.ElementTree import parse
 # et = parse(xmlfile)
 
 
+# 設定ファイル
+import configparser
+cfg = configparser.ConfigParser()
+cfg.read('settings.cfg')
+print(cfg)
+print(cfg['french'])
+print(cfg['french']['greeting'])
+print(cfg['files']['bin'])
+
+# pickleを使ったシリアライズ(直列化)
+import pickle
+import datetime
+now1 = datetime.datetime.utcnow()
+pickled = pickle.dumps(now1)
+now2 = pickle.loads(pickled) # リストで表示
+print(now1)
+print(now2)
+
+# pickleを用いて独自のクラスやオブジェクトを処理する
+import pickle
+class Tiny():
+    def __str__(self):
+        return 'tiny'
+
+obj1 = Tiny()
+print(obj1)
+print(str(obj1))
+pickled = pickle.dumps(obj1) # JSON文字列にエンコード = dumps()
+print('pickled:', pickled)
+obj2 = pickle.loads(pickled) # JSON文字列にデコード = loads()
+print(obj2)
+print(str(obj2))
+
+
