@@ -278,3 +278,25 @@ class DTEncoder(json.JSONEncoder):
 json.dumps(now, cls=DTEncoder)
 
 #YAML
+import yaml
+with open('mcintyre.yaml', 'rt') as fin:
+    text = fin.read()
+
+data = yaml.load(text)
+print(data['details'])
+print('poems', len(data['poems']))
+
+# 参照方法が[辞書][リスト][辞書]
+print(data['poems'][1]['title'])
+
+# セキュリティでの問題点
+
+# 危険
+from xml.etree.ElementTree import parse
+# et = parse(xmlfile)
+
+# 対策済み
+from defusedxml.ElementTree import parse
+# et = parse(xmlfile)
+
+
