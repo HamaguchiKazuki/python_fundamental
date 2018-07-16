@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6479e13d-9ce4-4a56-ac91-ef3cb3b92a0e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chapter8/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter8/note.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapter8/zoo.db" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +17,8 @@
       <file leaf-file-name="note.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Chapter8/note.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="469" lean-forward="true" selection-start-line="469" selection-end-line="469" />
+            <state relative-caret-position="448">
+              <caret line="495" lean-forward="true" selection-start-line="495" selection-end-line="495" />
             </state>
           </provider>
         </entry>
@@ -85,6 +85,91 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="python_fundamental" type="cbb8eebc:String" user="python_fundamental" />
               <item name="Chapter8" type="cbb8eebc:String" user="Chapter8" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="hamaguchikazuki" type="cbb8eebc:String" user="hamaguchikazuki" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="hamaguchikazuki" type="cbb8eebc:String" user="hamaguchikazuki" />
+              <item name=".pyenv" type="cbb8eebc:String" user=".pyenv" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="hamaguchikazuki" type="cbb8eebc:String" user="hamaguchikazuki" />
+              <item name=".pyenv" type="cbb8eebc:String" user=".pyenv" />
+              <item name="versions" type="cbb8eebc:String" user="versions" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="hamaguchikazuki" type="cbb8eebc:String" user="hamaguchikazuki" />
+              <item name=".pyenv" type="cbb8eebc:String" user=".pyenv" />
+              <item name="versions" type="cbb8eebc:String" user="versions" />
+              <item name="anaconda3-4.3.1" type="cbb8eebc:String" user="anaconda3-4.3.1" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="hamaguchikazuki" type="cbb8eebc:String" user="hamaguchikazuki" />
+              <item name=".pyenv" type="cbb8eebc:String" user=".pyenv" />
+              <item name="versions" type="cbb8eebc:String" user="versions" />
+              <item name="anaconda3-4.3.1" type="cbb8eebc:String" user="anaconda3-4.3.1" />
+              <item name="lib" type="cbb8eebc:String" user="lib" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="hamaguchikazuki" type="cbb8eebc:String" user="hamaguchikazuki" />
+              <item name=".pyenv" type="cbb8eebc:String" user=".pyenv" />
+              <item name="versions" type="cbb8eebc:String" user="versions" />
+              <item name="anaconda3-4.3.1" type="cbb8eebc:String" user="anaconda3-4.3.1" />
+              <item name="lib" type="cbb8eebc:String" user="lib" />
+              <item name="python3.6" type="cbb8eebc:String" user="python3.6" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="hamaguchikazuki" type="cbb8eebc:String" user="hamaguchikazuki" />
+              <item name=".pyenv" type="cbb8eebc:String" user=".pyenv" />
+              <item name="versions" type="cbb8eebc:String" user="versions" />
+              <item name="anaconda3-4.3.1" type="cbb8eebc:String" user="anaconda3-4.3.1" />
+              <item name="lib" type="cbb8eebc:String" user="lib" />
+              <item name="python3.6" type="cbb8eebc:String" user="python3.6" />
+              <item name="site-packages" type="cbb8eebc:String" user="site-packages" />
             </path>
           </expand>
           <select />
@@ -242,11 +327,11 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969698" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50183153" side_tool="true" weight="0.27589744" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32969698" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4993895" weight="0.32923076" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.33128205" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.27897435" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4981685" weight="0.27897435" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22222222" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="3" />
@@ -386,8 +471,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Chapter8/note.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="469" lean-forward="true" selection-start-line="469" selection-end-line="469" />
+        <state relative-caret-position="448">
+          <caret line="495" lean-forward="true" selection-start-line="495" selection-end-line="495" />
         </state>
       </provider>
     </entry>

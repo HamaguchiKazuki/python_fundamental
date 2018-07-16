@@ -484,4 +484,20 @@ db.close()
 db = dbm.open('definitions', 'r')
 print(db['mustard'])
 
-# memcached
+# memcached(今回は同じコンピュータ上の一つのmemcachedサーバーとだけやり取り)
+import memcache
+db = memcache.Client(['127.0.0.1:11211'])
+if db.set('marco', 'polo'):
+    print('set')
+obj1 = db.get('marco')
+print(obj1)
+db.set('ducks', 0)
+print('ducks', db.get('ducks'))
+db.incr('ducks', 2)
+print('ducks', db.get('ducks'))
+
+#Redis
+
+
+
+
