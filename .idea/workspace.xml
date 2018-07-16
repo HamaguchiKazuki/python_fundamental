@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6479e13d-9ce4-4a56-ac91-ef3cb3b92a0e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chapter8/enterprise.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Chapter8/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter8/note.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chapter8/zoo.db" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,17 +17,8 @@
       <file leaf-file-name="note.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Chapter8/note.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="371" lean-forward="true" selection-start-line="371" selection-end-line="371" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="enterprise.db" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Chapter8/enterprise.db">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="508">
+              <caret line="469" lean-forward="true" selection-start-line="469" selection-end-line="469" />
             </state>
           </provider>
         </entry>
@@ -44,8 +33,12 @@
     </option>
   </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>conn1</find>
+    </findStrings>
     <replaceStrings>
       <replace>source</replace>
+      <replace>conn</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -246,19 +239,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969698" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32969698" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.33128205" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27897435" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.27897435" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22222222" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -376,6 +370,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Chapter8/zoo.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Chapter8/enterprise.db">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -385,8 +386,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Chapter8/note.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="371" lean-forward="true" selection-start-line="371" selection-end-line="371" />
+        <state relative-caret-position="508">
+          <caret line="469" lean-forward="true" selection-start-line="469" selection-end-line="469" />
         </state>
       </provider>
     </entry>

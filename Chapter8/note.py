@@ -453,11 +453,35 @@ print(third)
 # OMRとSQLへ接続していく
 from sqlalchemy.orm import sessionmaker
 Session = sessionmaker(bind=conn)
-session = Session()
+if Session is None:
+    session = Session()
 
 # SQLに追加
-session.add(first)  # 単体追加
-session.add_all([second, third])    # リストで複数追加
+    session.add(first)  # 単体追加
+    session.add_all([second, third])    # リストで複数追加
 
 # すべての処理を強制的に終了
-session.commit()
+    session.commit()
+
+# noSQL(not only SQL)
+# dbm
+import dbm
+db = dbm.open('definitions', 'c')   # r,読み w,書き c,読み書き
+
+# キーと値の組を作る
+db['mustard'] = 'yellow'
+db['ketchup'] = 'red'
+db['pesto'] = 'green'
+
+# 確認
+print(len(db))
+print(db['pesto'])
+
+# 一度閉じる
+db.close()
+
+# 開き直してデータがあるか確認
+db = dbm.open('definitions', 'r')
+print(db['mustard'])
+
+# memcached
