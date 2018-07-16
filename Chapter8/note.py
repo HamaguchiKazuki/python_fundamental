@@ -370,3 +370,94 @@ print('損失', curs.fetchall())
 curs.close()
 conn.close()
 
+# SQLAlchemy
+import sqlalchemy as sa
+conn = sa.create_engine('sqlite://')
+conn.execute('''CREATE TABLE zoo
+(critter VARCHAR(20) PRIMARY KEY,
+count INT,
+damages FLOAT)''')
+
+# 新しいテーブルに3個のデータを挿入
+ins = 'INSERT INTO zoo(critter, count, damages) VALUES (?, ?, ?)'
+conn.execute(ins, 'duck', 10, 0.0)
+conn.execute(ins, 'bear', 2, 1000.0)
+conn.execute(ins, 'weasel', 1, 2000.0)
+
+# データの表示を要求
+rows = conn.execute('SELECT * FROM zoo')
+print(rows)
+
+# イテラブルのためfor文で取り出す
+for row in rows:
+    print(row)
+
+# SQL表現言語
+import sqlalchemy as sa
+conn = sa.create_engine('sqlite://')
+
+# SQLでなく表現言語を使う
+meta = sa.MetaData()
+zoo = sa.Table('zoo', meta,
+               sa.Column('critter', sa.String, primary_key=True),
+               sa.Column('count', sa.Integer),
+               sa.Column('damages', sa.Float)
+               )
+meta.create_all(conn)
+
+# データの挿入
+conn.execute(zoo.insert(('bear', 2, 1000.0)))
+conn.execute(zoo.insert(('weasel', 1, 2000.0)))
+conn.execute(zoo.insert(('duck', 10, 0)))
+
+# 結果の取得
+result = conn.execute(zoo.select())
+rows = result.fetchall()
+print('表現言語', rows)
+
+# (ORM : Object Relational Mapping)を使ってみよう！
+import sqlalchemy as sa
+from sqlalchemy.ext.declarative import declarative_base
+
+# 接続を行う
+conn = sa.create_engine('sqlite:///zoo.db')
+print('接続確認', conn)
+
+# ORMとの対応付け
+Base = declarative_base()
+class Zoo(Base):
+    __tablename__ = 'zoo'
+    critter = sa.Column('critter', sa.String, primary_key=True)
+    count = sa.Column('count', sa.Integer)
+    damages = sa.Column('damages', sa.Float)
+    def __init__(self, critter, count, damages):
+        self.critter = critter
+        self.count = count
+        self.damages = damages
+    def __repr__(self):
+        return "<Zoo({}, {}, {})>".format(self.critter, self.count, self.damages)
+
+# データベースとテーブルの作成
+Base.metadata.create_all(conn)
+
+# データ挿入
+first = Zoo('duck', 10, 0.0)
+second = Zoo('bear', 2, 1000.0)
+third = Zoo('weasel', 1, 2000.0)
+
+# 確認
+print(first)
+print(second)
+print(third)
+
+# OMRとSQLへ接続していく
+from sqlalchemy.orm import sessionmaker
+Session = sessionmaker(bind=conn)
+session = Session()
+
+# SQLに追加
+session.add(first)  # 単体追加
+session.add_all([second, third])    # リストで複数追加
+
+# すべての処理を強制的に終了
+session.commit()
