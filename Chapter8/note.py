@@ -337,4 +337,36 @@ print(str(obj2))
 import sqlite3
 conn = sqlite3.connect('enterprise.db')
 curs = conn.cursor()
-curs.execute('''CREATE TABLE zoo (critter VARCHAR(20) PRIMARY KEY, count INT, damages FLOAT)''')
+if curs is None:
+    curs.execute('''CREATE TABLE zoo (critter VARCHAR(20) PRIMARY KEY, count INT, damages FLOAT)''')
+
+# 動物のデータを追加
+curs.execute('INSERT INTO zoo VALUES("duck", 5, 0.0)')
+curs.execute('INSERT INTO zoo VALUES("bear", 2, 1000.0)')
+
+# プレースホルダーを使った方法（こっちのほうが安全）
+ins = 'INSERT INTO zoo (critter, count, damages) VALUES(?, ?, ?)'
+curs.execute(ins, ('weasel', 1, 2000.0))
+
+# すべての動物の情報を引き出す
+curs.execute('SELECT * FROM zoo')
+rows = curs.fetchall()
+print(rows)
+
+# 個体数順にソートして取り出す(昇順)
+curs.execute('SELECT * from zoo ORDER BY count')
+print('昇順', curs.fetchall())
+
+# 降順でソートする
+curs.execute('SELECT * from zoo ORDER BY count DESC')
+print('降順', curs.fetchall())
+
+# 最も損失の大きい動物は？
+curs.execute('''SELECT * FROM zoo WHERE
+damages = (SELECT MAX (damages) FROM zoo)''')
+print('損失', curs.fetchall())
+
+# 開いたものはちゃんと閉じよう
+curs.close()
+conn.close()
+
